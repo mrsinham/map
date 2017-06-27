@@ -3,7 +3,7 @@ package main
 import "math/rand"
 
 type Point struct {
-	X, Y uint
+	X, Y float32
 }
 
 type Map struct {
@@ -11,13 +11,13 @@ type Map struct {
 	Rand   *rand.Rand
 	Grid   []*Point
 	Limits struct {
-		X, Y uint
+		X, Y float32
 	}
 	Resolution int
 }
 
 func NewMap(
-	seed int64, sizeX, sizeY uint, resolution int,
+	seed int64, sizeX, sizeY float32, resolution int,
 ) *Map {
 	m := &Map{Seed: seed}
 	m.Rand = rand.New(rand.NewSource(seed))
